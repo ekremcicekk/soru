@@ -1,52 +1,34 @@
-# Prerequisites
-*.d
+/*
+MOTAŞ'a ait akıllı bisikletlerin kullanımında ücret tarifesi aşağıdaki gibidir.
+0-60 dakika  	  2 TL
+60-120 dakika     4 TL
+120-180 dakika    6 TL
+180 dakika ve üzerinde ise 60 dakikada bir 3 TL eklenir.
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+*/
+#include<stdio.h>
+main()
+{
+	int sure,ucret;
+	
+	printf("Kac dakika suruldu:");
+	scanf("%d",&sure);
+	
+	if(sure>0 and sure<60)
+	{
+		ucret=2;
+	}
+	else if (sure>=60 and sure<120)
+	{
+		ucret=4;
+	}
+	else if(sure>=120 and sure<180)
+	{
+		ucret=6;
+	}
+	else
+	{
+		ucret=9+((sure-180)/60)*3;
+	}
+	printf("Ucret %d TL'dir.",ucret);	
+}
